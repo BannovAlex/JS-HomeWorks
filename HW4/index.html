@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW4</title>
+</head>
+<body>
+    <pre>
+        <code>Задание 1
+           var handbag = {
+                    documents : ["Паспорт", "Права", "Код ИННН", "Пропуск"],
+                    accesoirs : ["Помада", "Салфетки", "Ключи"],
+
+                    addDocument: function ( name ) {
+                           this.documents.push ( name )
+                    },
+                    addAccesoir: function ( name ) {
+                           this.documents.push ( name )
+                    },
+                    deleteDocument: function ( num ) {
+                           this.documents.splice ( num, 1 )
+                    },
+                    deleteAccesoir: function ( num ) {
+                           this.accesoirs.splice ( num, 1 )
+                    }
+            }
+            handbag.deleteDocument ()
+            handbag.deleteAccesoir ()
+            handbag.addDocument ()
+            handbag.addAccesoir ()
+
+        </code>
+        <code>Задание 3
+           var Cars = function () {
+                Cars.prototype.addProperty = function (name, prop){
+                    this[name] = prop
+                }
+            }
+            var obj1 = {}
+            var obj2 = {}
+
+            var obj1 = new Cars
+            var obj2 = new Cars
+            obj1.addProperty ("Model", "Skoda")
+            obj2.addProperty ("Model", "Audi")
+            console.log (obj1)
+            console.log (obj2)
+        </code>
+    </pre>
+</body>
+</html>
