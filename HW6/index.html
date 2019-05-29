@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW6</title>
+</head>
+<body>
+    <pre>
+        <code> Задание 1
+            var tags = ["header", "section", "div", "footer"];
+            var classes = ["first", "second", "third", "fourth"];
+            var style = document.createElement('style');
+                        document.head.appendChild(style);
+
+            style.appendChild(document.createTextNode(`
+                 .first {
+                    background-color: blue;
+                    height: 100px;
+                    width: 100px
+                  }
+                 .second {
+                    background-color: grey;
+                    height: 100px;
+                    width: 100px
+                  }
+               .third{
+                    background-color: green;
+                    height: 100px;
+                    width: 100px
+                  }
+               .fourth {
+                    background-color: red;
+                    height: 100px;
+                    width: 100px
+                  }
+            `))
+
+            for (var tag in tags) {
+                document.body.appendChild(
+                document.createElement(`${tags[tag]}`)
+                ).setAttribute('class', `${classes[tag]}`)
+            }
+        </code>
+        <code> Задание 2
+            var tags =[
+                {
+                    name: "header",
+                    attrs: { className: "first" },
+                    style: "background-color: blue; height: 100px; width: 100px;",
+                    onclick : userClick
+                },
+                {
+                    name: "section",
+                    attrs: { className: "second" },
+                    style: "background-color: grey; height: 100px; width: 100px;",
+                    onclick : userClick
+                },
+                {
+                    name: "div",
+                    attrs: { className: "third" },
+                    style: "background-color: green; height: 100px; width: 100px;",
+                    onclick : userClick
+                },
+                {
+                    name: "footer",
+                    attrs: { className: "fourth" },
+                    style: "background-color: red; height: 100px; width: 100px;",
+                    onclick : userClick
+                },
+    ​
+                ]
+                for ( var tag of tags ) {
+                        var elem = document.body.appendChild ( document.createElement ( tag.name ) )
+                        elem.style = tag.style
+                        for ( var attr in tag.attrs )  elem [ attr ] = tag.attrs [ attr ]
+                        elem.onclick = tag.onclick
+                }
+                function userClick(event){
+                        console.log("Hello World")
+                }
+​
+                document.getElementsByTagName("header")[0].innerHTML = "Привет"
+                document.getElementsByTagName("section")[0].innerHTML = "Привiт"
+                document.getElementsByTagName("div")[0].innerHTML = "Hello"
+                document.getElementsByTagName("footer")[0].innerHTML = "Salut"
+        </code>
+        <code>Задание 3
+            var style = document.head.appendChild(document.createElement('style'))
+            style.textContent = `.redBack { background-color: red!important; }`
+            for (var elem of document.body.children)
+              elem.tagName === 'SCRIPT' ? null :
+              elem.className = 'redBack'
+        </code>
+    </pre>
+</body>
+</html>
