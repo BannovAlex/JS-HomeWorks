@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW7</title>
+</head>
+<body>
+    <pre>
+        <code> Задание 1
+            var p = document.body.appendChild( document.createElement ('p'))
+            p.style = `width: 20px; height: 20px; background-color: red`
+            p.onclick = function ( event ) {
+                var img = event.target.appendChild (document.createElement ( "img" ))
+                img.src = "https://www.insidescience.org/sites/default/files/5_heic1808a_crop.jpg"
+                img.width = 100
+            }
+            img.onclick = function (event){
+                img.width = 200
+            }
+        </code>
+
+        <code> Задание 2
+            var collection = []
+                function over(event) {
+                    event.target.style.backgroundColor = '#ffff0050'
+                }
+                function out(event) {
+                    event.target.style.backgroundColor = '#ff00ff50'
+                }
+                function clickHandler(event) {
+                    event.target.remove()
+                }
+
+                for (var item of ["first", "second", "third", "fourth"]) {
+                    var elem = document.createElement('div');
+                    elem.style = `
+                        width:${400 - 100 * collection.length}px;
+                        height:${400 - 100 * collection.length}px;
+                        background-color: #ff00ff50;
+                        border: dotted 1px yellow;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    `;
+                    (!collection.length ? document.body :
+                        collection[collection.length - 1]).appendChild(elem);
+                        collection.push(elem);
+                        elem.title = item;
+                        elem.onmouseover = over;
+                        elem.onmouseout = out;
+                        elem.onclick = clickHandler;
+                }
+        </code>
+        <code> Задание 3
+           var collection = []
+                    function over(event) {
+                        event.target.style.backgroundColor = '#ffff0050'
+                    }
+                    function out(event) {
+                        event.target.style.backgroundColor = '#ff00ff50'
+                    }
+                    function clickHandler(event) {
+                        event.stopPropagation()
+                        event.target.outerHTML = event.target.innerHTML
+                        document.querySelector("div").addEventListener("click", clickHandler)
+                    }
+
+                    for (var item of [1, 2, 3, 4, 5]) {
+                        var elem = document.createElement('div');
+                        elem.style = `
+                            width:${400 - 100 * collection.length}px;
+                            height:${400 - 100 * collection.length}px;
+                            background-color: #ff00ff50;
+                            border-radius: 50%;
+                            border: dotted 1px yellow;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        `;
+                        (!collection.length ? document.body :
+                            collection[collection.length - 1]).appendChild(elem);
+                        collection.push(elem);
+                        elem.title = item;
+                        elem.onmouseover = over;
+                        elem.onmouseout = out;
+                        elem.onclick = clickHandler;
+                    }
+        </code>
+    </pre>
+</body>
+</html>
