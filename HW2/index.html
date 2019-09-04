@@ -6,26 +6,57 @@
 </head>
 <body>
     <pre>
-        <code> Задание 1
-            function HW2task1 (str) {
-              var letters = [];
-              letters.push( str.match(/\b(\w)/g ) );
-              console.log(letters);
-              var Mainletter = letters.join('');
-              console.log(Mainletter);
-              return Mainletter; }
-            HW2task1("Alex Sergey Igor Andrey")
-        </code>
-        <code> Задание 2
-            function HW2task2 (x){
-              if (typeof x === "number"){
-                return (new Date( ).toLocaleString( ))
-              }
-              else {
-                return ("Не верное значение")
-                }
+        <h2>Задание 1</h2>
+        <h3>Способ 1(нашел решение в интернете)</h3>
+        <code>
+            function task1 (str) {
+                var letters = [];
+                letters.push( str.match(/\b(\w)/g ) );
+                console.log(letters);
+                var mainLetter = letters.join('');
+            return mainLetter;
             }
-            HW2task2()
+            task1("Backend As A Service")
+        </code>
+        <h3>Способ 2(написал сам)</h3>
+        <code>
+           function task1 (text) {
+                var arr = text.split(' ');
+                var letters = [];
+                for(i=0; i < arr.length; i++) {
+                    letters.push(arr[i].substring(0,1))
+                }
+                console.log(letters)
+                var str = letters.join('');
+           return str
+           }
+           task1("Backend As A Service")
+        </code>
+        <h2>Задание 2</h2>
+        <h3>Способ 1</h3>
+        <code>
+            function task2 (x){
+               if (typeof x === "number"){
+                  return (new Date( ).toLocaleString( ))
+               }
+               else {
+                  return ("Неверный тип данных")
+               }
+            }
+            task2()
+        </code>
+        <h3>Способ 2</h3>
+        <code>
+            function numb(x) {
+                return typeof x === "number" ? new Date().toLocaleString() : "Неверный тип данных"
+            }
+            numb()
+        </code>
+        <h2>Задание 3</h2>
+        <code>
+            function testUserText ( userText ) {
+                return userText.split("<").join("&lt;")
+            }
         </code>
     </pre>
 </body>
