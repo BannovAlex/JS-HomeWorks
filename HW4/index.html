@@ -6,7 +6,8 @@
 </head>
 <body>
     <pre>
-        <code>Задание 1
+        <h2>Задание 1</h2>
+        <code>
            var handbag = {
                     documents : ["Паспорт", "Права", "Код ИННН", "Пропуск"],
                     accesoirs : ["Помада", "Салфетки", "Ключи"],
@@ -15,7 +16,7 @@
                            this.documents.push ( name )
                     },
                     addAccesoir: function ( name ) {
-                           this.documents.push ( name )
+                           this. accesoirs.push ( name )
                     },
                     deleteDocument: function ( num ) {
                            this.documents.splice ( num, 1 )
@@ -24,13 +25,14 @@
                            this.accesoirs.splice ( num, 1 )
                     }
             }
-            handbag.deleteDocument ()
-            handbag.deleteAccesoir ()
-            handbag.addDocument ()
-            handbag.addAccesoir ()
+            handbag.deleteDocument (1)
+            handbag.deleteAccesoir (0)
+            handbag.addDocument ("Билеты")
+            handbag.addAccesoir ("Ручка")
 
         </code>
-        <code>Задание 2
+        <h2>Задание 2</h2>
+        <code>
             var LibraryBook = function ( _title = "Без названия", _year = "нет данных", _author = "нет данных" ) {
                 var title = _title
                 var year = _year
@@ -78,21 +80,15 @@
             books [3].getBookInfo()
 
         </code>
-        <code>Задание 3
-           var Cars = function () {
-                Cars.prototype.addProperty = function (name, prop){
-                    this[name] = prop
-                }
+        <h2>Задание 3</h2>
+        <code>
+            function sample(){}
+            var cars = new Sample()
+            sample.prototype.addProperty = function ( prop, name) {
+                this [prop] = name
             }
-            var obj1 = {}
-            var obj2 = {}
-
-            var obj1 = new Cars
-            var obj2 = new Cars
-            obj1.addProperty ("Model", "Skoda")
-            obj2.addProperty ("Model", "Audi")
-            console.log (obj1)
-            console.log (obj2)
+            cars.addProperty ( "Model", "Skoda" )
+            cars
         </code>
     </pre>
 </body>
