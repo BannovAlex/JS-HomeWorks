@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW8</title>
+</head>
+<body>
+<pre>
+        <h2>Задание 1</h2>
+        <code>
+        var p = document.body.appendChild(
+            document.createElement("p")
+        )
+        var interval = 100
+        function currentTime() {
+            interval--
+            if ( interval < 0 ) return p.remove()
+            p.innerText = new Date().toLocaleTimeString()
+            setTimeout ( currentTime, 1000 )
+        }
+        currentTime()
+
+        </code>
+        <h2>Задание 2</h2>
+        <code>
+        var typeMessage = (function (velocity) {
+            let container = document.getElementById("demo") ?
+                document.getElementById("demo") :
+                document.body.appendChild(
+                    document.createElement("h3")
+                )
+            container.style = `color: magenta;`
+            var index = 0
+            return function (message) {
+                for (var i = 0; i < message.length; i++) {
+                    setTimeout(function () {
+                        container.textContent += message[index];
+                        index++
+                    }, 1000 * i)
+                }
+            }
+        })(1)
+        typeMessage(`Welcome to the hell`)
+
+        </code>
+        <h2>Задание 3</h2>
+        <code>
+        function User ( name ) {
+            this.name = name
+            this.id = this.counter()
+        }
+        User.prototype.counter = (
+            function () {
+                var counter = 0
+                return function () {
+                    return this.id ? this.id : counter++
+                }
+            }
+        )()
+
+        var users = [
+            new User ( "Семен" ),
+            new User ( "Антон" ),
+            new User ( "Демьян" ),
+            new User ( "Василий" )
+]
+        </code>
+    </pre>
+</body>
+</html>
