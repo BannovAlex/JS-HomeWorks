@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW11_Bannov</title>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <h1>FEA_15 Bannov Aleksandr</h1>
+        <h2>Home work 11</h2>
+    </header>
+    <main>
+        <section>
+            <h2>Task_1</h2>
+            <h4>Required</h4>
+            <p> Предварительная подготовка:
+                Создать файл с данными в формате JSON
+                Это должен быть массив объектов с двумя свойствами: title и ref
+                title - название картинки
+                ref - ссылка на картинку
+                Задание:
+                • Загрузить данные из JSON-файла
+                • Распарсить данные в массив
+                • Вывести на страницу картинки и подписи к ним</p>
+            <a target="_blank" style="text-decoration: none" href="js/hw11_1.js">Code_JS_1</a>
+            <script src="js/hw11_1.js"></script>
+        </section>
+        <section>
+            <h2>Task_2</h2>
+            <h4> Additional</h4>
+            <p>Задача: напилить код, который вызывает функцию sendMessage для каждого элемента массива messages и логирует полученные сообщения в объекте log</p>
+            <a target="_blank" style="text-decoration: none" href="js/hw11_2.js">Code_JS_2</a>
+        </section>
+        <section>
+            <h2>Task_3</h2>
+            <h4> Additional</h4>
+            <p>Изменим условие предыдущего задания
+                Массив messages, объект log и функция sendMessage остаются теми же
+                Немного изменится метод getKey:
+                messages.getKey = () => new Date().toLocaleString().split(", ")[1]
+                Нужно напилить код рекурсивной функции recursive, которая вызывает sendMessage поочередно с каждым
+                элементом массива messages, но только после того, как предыдущий месседж будет залогирован в объекте
+                log
+            </p>
+            <a target="_blank" style="text-decoration: none" href="js/hw11_3.js">Code_JS_2</a>
+        </section>
+    </main>
+</div>
+</body>

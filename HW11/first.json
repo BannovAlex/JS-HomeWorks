@@ -1,17 +1,21 @@
 [
   {
+    name: "img",
     title : "VW",
     ref : "http://toplogos.ru/images/logo-volkswagen.jpg"
   },
   {
+    name: "img",
     title : "Skoda",
     ref : "https://i.pinimg.com/originals/2d/0c/d0/2d0cd012ebc7540256773a8307dd78ad.jpg"
   },
   {
+    name: "img",
     title : "Audi",
     ref : "https://st2.zr.ru/_ah/img/Y8ceIIELSXPt8V0Rtu1wcA=s800"
   },
   {
+    name: "img",
     title : "Seat",
     ref : "https://shinshina-shop.com/image/cache/catalog/raznoe/0/age-krep-raznoe-Seat-400x400.jpg"
   }
